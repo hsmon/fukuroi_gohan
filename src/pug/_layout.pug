@@ -1,0 +1,24 @@
+doctype html
+block vars
+html(lang="ja")
+  head
+    include inc/_inc_head.pug
+    block css
+    //- // GA TAG
+    //- script(type="text/javascript").
+    //-   var _gaq = _gaq || [];
+    //-   _gaq.push(['_setAccount', 'UA-27168129-1']);
+    //-   _gaq.push(['_trackPageview']);
+    //-   (function() {
+    //-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    //-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    //-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    //-   })();
+  body(class=key)
+    .st-wrapper
+      include inc/_inc_header.pug
+      block contents
+      include inc/_inc_footer.pug
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async)
+      script(src="/js/common.js" async)
+      block script

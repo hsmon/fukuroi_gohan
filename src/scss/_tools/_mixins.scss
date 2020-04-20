@@ -1,0 +1,100 @@
+@charset 'UTF-8';
+
+// ---------------------------
+// レイアウト
+// ---------------------------
+
+// インラインブロック
+@mixin inlineP() {
+  font-size: 0;
+  letter-spacing: -0.4em;
+  word-spacing: -1em;
+}
+@mixin inlineC() {
+  font-size: $fs-base;
+  letter-spacing: $ls-base;
+  word-spacing: normal;
+  display: inline-block;
+}
+
+// テーブル
+@mixin table() {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+// フレックスボックス
+@mixin flex($arg) {
+  $align: ();
+
+  @if $arg == "top" {
+      $align : flex-start;
+  }
+
+  @if $arg == "center" {
+      $align : center;
+  }
+
+  @if $arg == "bottom" {
+      $align : flex-end;
+  }
+
+  display: flex;
+  align-items: $align;
+
+  > {
+    display: block;
+  }
+
+}
+
+// ---------------------------
+// フォーム
+// ---------------------------
+
+// プレースホルダー
+@mixin placeholder {
+    &:placeholder-shown {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        opacity: 1;
+        @content;
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+
+// ---------------------------
+// メディアクエリ
+// ---------------------------
+@mixin media($media-width) {
+  // 360px以下
+  @if $media-width == SP {
+    @media only screen and (max-width: $BREAK_SP) {
+      @content;
+    }
+  }
+  // 767px以下
+  @else if $media-width == TB {
+    @media only screen and (max-width: $BREAK_TB) {
+      @content;
+    }
+  }
+  // 1030px以下
+  @else if $media-width == PC {
+    @media only screen and (max-width: $BREAK_PC) {
+      @content;
+    }
+  }
+}

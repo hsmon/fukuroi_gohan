@@ -1,0 +1,14 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "top";
+  - var page = pages[key];
+
+block css
+  link(rel="stylesheet", href="/css/top.css")
+
+block contents
+  main.st-main
+    
+

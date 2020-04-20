@@ -1,0 +1,62 @@
+@charset 'UTF-8';
+
+//--------------------
+// フォント
+//---------------------
+
+// font-family
+$ff-base: 'Noto Sans Japanese','游ゴシック','YuGothic', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Helvetica, Arial, Verdana, sans-serif;
+
+// font-size
+$fs-base: 1.4rem;
+
+// font-weight
+$fw-base: 400;
+
+// letter-spacing
+$ls-base: normal;
+
+// line-height
+$lh-base: 1.6;
+
+// font-color
+$fc-base: #000;
+
+
+//---------------------
+// カラー
+//---------------------
+$col-main: #d8d8d8;
+$col-dark: #898989;
+
+
+//---------------------
+// radius
+//---------------------
+$radius-base: 5px;
+
+//---------------------
+// レイアウト
+//---------------------
+
+// ベース 幅
+$base-column: 1030px;
+
+// ベース スペース
+$base-space: 15px;
+
+
+//---------------------
+// ブレイクポイント
+//---------------------
+$BREAK_PC: 1030px;
+$BREAK_TB: 767px;
+$BREAK_SP: 360px;
+
+//---------------------
+// 関数
+//---------------------
+@function printUrl($fileName) {
+  @return url($imagesPath + $fileName);
+}
+

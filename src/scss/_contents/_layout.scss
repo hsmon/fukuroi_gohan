@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+
+/* 基本のレイアウト幅
+------------------------- */
+.c-l-column {
+	width: $base-column;
+	padding: 0 $base-space;
+	margin: 0 auto;
+}

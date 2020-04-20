@@ -1,0 +1,27 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+meta(name="format-detection", content="telephone=no")
+
+title #{page.title}
+
+meta(content=page.description, name="description")
+meta(content=page.keywords, name="keywords")
+meta(content=page.title, property="og:title")
+meta(content=page.description, property="og:description")
+
+meta(content=domain + page.url, property="og:url")
+
+meta(content="ja_JP", property="og:locale")
+meta(content=domain + page.image, property="og:image")
+meta(property="og:site_name" content="")
+meta(content=(key == "top" ? "website" : "article"), property="og:type")
+link(rel="canonical" href=page.url)
+
+link(rel="icon" href="/img/favicon.ico" type="image/x-icon")
+link(rel="shortcut icon", href="/img/favicon.ico" type="image/x-icon")
+link(rel="icon" href="/img/favicon.png" type="image/x-icon")
+link(rel="apple-touch-icon" href="/img/apple-touch-icon.png")
+
+link(href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,500,700" rel="stylesheet")
+link(rel="stylesheet", href="/css/common.css")
