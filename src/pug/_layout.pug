@@ -19,6 +19,6 @@ html(lang="ja")
       include inc/_inc_header.pug
       block contents
       include inc/_inc_footer.pug
-      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async)
-      script(src="/js/common.js" async)
+      <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+      script(src="/js/common.js")
       block script

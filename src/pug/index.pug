@@ -6,9 +6,185 @@ block vars
   - var page = pages[key];
 
 block css
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css")
   link(rel="stylesheet", href="/css/top.css")
 
 block contents
+  - const PATH_IMAGE = '/images/top/'
   main.st-main
-    
+    section.t-mv(data-motion="false")
+      .t-mv__conts
+        .c-l-column
+          h1.t-mv__title
+            | あの店のあの味を​食卓へ
+            span 飲食店と生産者を
+              br
+              | ご家庭へつなげるサイト
+          .c-btn.c-btn--white.c-btn--large
+            a(href="/shoplist/") もっと詳しく
+      .t-mv__slider.swiper-container
+        .loading(role="alert" aria-busy="true" aria-label="loading")
+          .dot-falling
+        ul.t-mv__slider__list.swiper-wrapper
+          - for (let i = 1; i < 4; i++)
+            li.t-mv__slider__list-item.swiper-slide(class=`_0${i}`)
+    //- section.t-covid
+      h2 #コロナには"絶対に"負けない
+    section.t-intro(data-motion="false")
+      .t-intro__inner
+        .c-l-column
+          .t-intro__conts
+            .head
+              .t-intro__img
+                img(src=("/images/common/" + "logo.png"), alt="ふくろいごはん")
+            .body
+              h2.t-intro__title
+                | ​飲食の力で
+                br.for-sp
+                | この町を元気に。
+              p.t-intro__desc
+                b ”ふくろいごはん”
+                |  は
+                br
+                | 「 
+                em 飲食 
+                | の力で 
+                em この街を元気に。 
+                | 」
+                br
+                | を掲げる有志の集まりです。
+              p.t-intro__desc
+                | 誰の 
+                em 笑顔 
+                | のために？を明確にイメージしながら、
+                br.for-pc
+                em 地域 
+                | 社会への貢献を目標としており
+                br.for-pc
+                | 店舗情報やメニューを掲載するだけでなく 
+                br.for-pc
+                em 食を通じた仲間づくり
+                | に取り組んでいます。
+    section.t-howto(data-motion="false")
+      .c-l-column
+          h2.t-howto__title 使い方
+          ol.t-howto__list
+            -
+              const howtoList = [
+                {
+                  title:"​ネットで選んで",
+                  desc:"<a href='/shoplist/'>お店一覧</a>から各店舗の<br>メニューをごらんください。",
+                },
+                {
+                  title:"電話で注文",
+                  desc:"お店ごとに注文方法が<br>異なります。",
+                },
+                {
+                  title:"お受け取り",
+                  desc:"ご指定の時間に​店頭へ。",
+                },
+              ]
+            each item , index in howtoList
+              - const INDEX = index + 1
+              li
+                .t-howto__element
+                  .head
+                    img(src=(PATH_IMAGE + `img_howto_0${INDEX}.png`), alt="")
+                  .body
+                    dl
+                      dt!= item.title
+                      dd!= item.desc
+          .c-btn
+            a(href="/shoplist/") お店をさがす
+    section.t-sns(data-motion="false")
+      .c-l-column
+        .t-sns__inner
+          h2.t-sns__title
+            a(href="//www.instagram.com/fukuroi.gohan/?igshid=ub7459x0tzyx" target="_blank") @fukuroi.gohan
+          ul.t-sns__list
+    section.t-promise(data-motion="false")
+      .c-l-column
+        h2.t-promise__title 3つの約束
+        ul.t-promise__list
+          li
+            | コロナ感染対策の徹底
+          li
+            | 食品衛生の知識を共有
+          li
+            | 地域社会への貢献
+    section.t-topics(data-motion="false")
+      .t-topics__inner
+        .c-l-column
+          h2.t-topics__title トピックス
+          ul.t-topics__list
+            -
+              const topicSmapleList = [
+                {
+                  day:"04/20",
+                  title:"ふくろいごはん for Biz を発表させて頂きました。",
+                },
+                {
+                  day:"04/20",
+                  title:"山下新聞店「見守り弁当」をリリースさせて頂きました。",
+                },
+                {
+                  day:"04/19",
+                  title:"ベラマッサ・AKA2PAREが加入",
+                },
+                {
+                  day:"04/15",
+                  title:"ジュビロ磐田公式ホームページにてご紹介いただきました",
+                },
+                {
+                  day:"04/14",
+                  title:"メニューPDFを各店舗ごとに切り分けて使いやすくなりました",
+                },
+                {
+                  day:"04/13",
+                  title:"全店舗の営業日時が一目でわかる一覧表を追加",
+                },
+                {
+                  day:"04/10",
+                  title:"だいこん亭・陽だまりが新加入",
+                },
+                {
+                  day:"04/09",
+                  title:"子供向けメニューのアイコンを追加",
+                },
+                {
+                  day:"04/08",
+                  title:"当日昼可と定休日アイコンを追加",
+                },
+                {
+                  day:"04/06",
+                  title:"ジュビロ磐田 公式 様が紹介してくださいました！",
+                },
+              ]
+            each item , index in topicSmapleList
+              li.t-topics__list-item
+                time!= item.day
+                p!= item.title
+          .c-btn.t-topics__more
+            a(href="") もっと見る
 
+block script
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+  <script type="text/javascript" src="//www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+  script(type="text/javascript").
+    const slider = document.querySelector('.t-mv__slider')
+    if(slider) {
+      var mySwiper = new Swiper ('.t-mv__slider', {
+        loop: true,
+        speed: 1000,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        direction: 'horizontal',
+        effect: 'fade',
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+      })
+    }
+  script(type="text/javascript" src="/js/vendor.js")
+  script(type="text/javascript" src="/js/top.js")

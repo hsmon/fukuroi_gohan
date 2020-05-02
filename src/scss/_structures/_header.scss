@@ -1,3 +1,26 @@
 @charset 'UTF-8';
 
-.st-header {}
+.st-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    @include media(TB){
+      height: 60px;
+    }
+  }
+  &__logo {
+    max-width: 200px;
+    width: 100%;
+    @include media(TB){
+      width: 140px;
+    }
+  }
+}

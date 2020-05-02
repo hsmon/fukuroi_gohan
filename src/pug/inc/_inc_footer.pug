@@ -1,1 +1,34 @@
 footer(role="contentinfo").st-footer
+  a(href="#").pagetop
+  .st-footer__inner
+    .c-l-column
+      .st-footer__conts
+        .st-footer__logo
+          a(href="/")
+            img(src="/images/common/logo_white.png", alt="ふくろいごはん")
+        ul.st-footer__list
+          -
+            const footerList = [
+              {
+                name: "お店",
+                href: "/shoplist/"
+              },
+              {
+                name: "見守り弁当",
+                href: "/mimamori/"
+              },
+              {
+                name: "for Biz",
+                href: "/for-biz/"
+              },
+              {
+                name: "生産者",
+                href: "/seisansha/"
+              },
+            ]
+          each item in footerList
+            li.st-footer__list-item
+              a(href=item.href)!= item.name
+  aside.st-footer__aside
+    <a href="mailto:the.blue.ocean2003@gmail.com?subject=ふくろいごはん" target="_self" data-content="the.blue.ocean2003@gmail.com" data-type="mail" id="comp-k80x2b0ilink" class="b2link"><span id="comp-k80x2b0ilabel" class="b2label">© 2020 THE BLUE OCEAN  Inc. 　okinori takehara</span></a>
+    <a href="https://protopeller.co.jp" target="_blank" data-content="https://protopeller.co.jp" data-type="external" rel="noopener" id="comp-k80x4x4glink" class="b2link"><span id="comp-k80x4x4glabel" class="b2label">Special Thanks：PROTOPELLER Inc.</span></a>

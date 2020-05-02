@@ -23,17 +23,25 @@ import lazyLoad from './container/_lazyload'
  * ==================================================== */
 import imgSwitch from './container/_imgSwitch'
 
+/** ======================================================
+ * ハンバーガーメニュー
+ * ==================================================== */
+import menu from './container/menu'
+
+/** ======================================================
+ * モーション
+ * ==================================================== */
+import motion from './container/motion'
+
 window.addEventListener('DOMContentLoaded', () => {
-  // UserAgent
-  UserAgent();
-  // 外部リンク処理
-  addNoOpener();
-  // lazyload
-  lazyLoad();
-  // 画像切り替え
-  imgSwitch();
+  UserAgent()
+  addNoOpener()
+  lazyLoad()
+  imgSwitch()
+  menu()
+  motion('data-motion')
 });
 window.onload = () => {
-  // リンク非活性化
-  noLinks();
+  document.body.classList.add('is-loaded')
+  noLinks()
 }

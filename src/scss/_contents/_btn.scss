@@ -1,3 +1,50 @@
 @charset 'UTF-8';
+//**************************************
+// settings
+//**************************************
+@import "./src/scss/_settings/variables";
 
-.c-btn {}
+//**************************************
+// tools
+//**************************************
+@import "./src/scss/_tools/mixins";
+
+$imagesPath: "/images/common/";
+
+.c-btn {
+  border-radius: 50px;
+  overflow: hidden;
+  transition: .3s ease background,.3s ease color;
+  a {
+    display: block;
+    transition: inherit;
+    text-align: center;
+  }
+  &--white {
+    border: 2px solid #fff;
+    &:hover {
+      @media only screen and (min-width: 767px) {
+        background: #fff;
+        a {
+          opacity: 1;
+          color: #000;
+        }
+      }
+    }
+    a {
+      color: #fff;
+    }
+  }
+  &--large {
+    a {
+      font-size: 2.4rem;
+      letter-spacing: .1em;
+      font-weight: bold;
+      padding: 10px 20px;
+      @include media(TB){
+        font-size: 1.8rem;
+        padding: 5px 20px;
+      }
+    }
+  }
+}

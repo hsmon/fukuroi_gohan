@@ -3,7 +3,37 @@
 /* 基本のレイアウト幅
 ------------------------- */
 .c-l-column {
-	width: $base-column;
+	max-width: $base-column;
+	width: 100%;
 	padding: 0 $base-space;
 	margin: 0 auto;
+	@include media(TB){
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+/* PC/SP
+------------------------- */
+.for-sp {
+  display: none;
+  @include media(TB) {
+    display: inline-block;
+  }
+}
+.for-pc {
+  display: inline-block;
+  @include media(TB) {
+    display: none;
+  }
+}
+
+[data-motion] {
+  opacity: 0;
+	transition: .3s ease;
+	transform: translate3d(0px, 0px,0px);
+}
+[data-motion="true"] {
+	opacity: 1;
+	transform: none;
 }

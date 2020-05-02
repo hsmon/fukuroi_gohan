@@ -1,3 +1,118 @@
 @charset 'UTF-8';
+//**************************************
+// settings
+//**************************************
+@import "./src/scss/_settings/variables";
 
-.st-footer {}
+//**************************************
+// tools
+//**************************************
+@import "./src/scss/_tools/mixins";
+
+$imagesPath: "../images/common/";
+
+.st-footer {
+  &__inner {
+    background: $fc-base;
+    padding: 60px 0;
+    .c-l-column {
+      max-width: 800px;
+    }
+  }
+  &__conts {
+    display: flex;
+    align-items: center;
+    @include media(TB){
+      display: block;
+      text-align: center;
+    }
+  }
+  &__logo {
+    width: 200px;
+    @include media(TB){
+      margin: 0 auto 30px;
+    }
+  }
+  &__list {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    @include media(TB){
+      display: block;
+    }
+    a {
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      font-size: 1.6rem;
+    }
+  }
+  &__list-item {
+    & + & {
+      margin-left: 20px;
+      @include media(TB){
+        margin-left: 0;
+        margin-top: 15px;
+      }
+    }
+  }
+  &__aside {
+    text-align: center;
+    padding: 10px 0;
+    @include media(TB){
+      padding: 15px 0;
+    }
+    a {
+      @include media(TB){
+        display: block;
+        text-align: center;
+      }
+      + a {
+        @media only screen and (min-width: 767px) {
+          margin-left: 50px;
+        }
+        @include media(TB){
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.pagetop {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  background: $fc-base;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s ease background;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  @include media(TB){
+    right: 20px;
+    bottom: 20px;
+  }
+  &:hover {
+    opacity: 1!important;
+    background: #444;
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    background: printUrl('icon_arrow2.svg')no-repeat;
+    background-size: 100% 100%;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(180deg);
+  }
+}

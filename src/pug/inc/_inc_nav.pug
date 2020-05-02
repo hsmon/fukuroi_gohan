@@ -1,1 +1,24 @@
 nav(role="navigation").st-nav#nav
+  ul.st-nav__list
+    -
+      const list = [
+        {
+          name: "お店",
+          href: "/shoplist/"
+        },
+        {
+          name: "見守り弁当",
+          href: "/mimamori/"
+        },
+        {
+          name: "for Biz",
+          href: "/for-biz/"
+        },
+        {
+          name: "生産者",
+          href: "/seisansha/"
+        },
+      ]
+    each item in list
+      li.st-nav__list-item
+        a(href=item.href)!= item.name
